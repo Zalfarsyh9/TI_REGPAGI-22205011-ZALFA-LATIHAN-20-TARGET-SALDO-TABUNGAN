@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.ti_regpagi22205011latihan22.zalfa.java;
+package com.mycompany.ti_regpagi22205011latihan20.zalfa.java;
 import java.util.Scanner;
 /**
  *
@@ -10,35 +10,32 @@ import java.util.Scanner;
  Nama : Zalfa Rosiyah Riski 
  Nim : 22205011
  Jurusan : Teknik Informatika
- Deskripsi : Membuat program perhitungan yang inputnya berasal dari kondisi lingkaran
+ Deskripsi : menampilkan target saldo tabungan
  */
-public class TI_REGPAGI22205011latihan22ZalfaJava {
-
+public class TI_REGPAGI22205011latihan20ZalfaJava {
     public static void main(String[] args) {
-       System.out.println("=======Perhitungan lingkaran=======");
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan nilai diameter lingkaran : ");
-        String diameterLingkaran = scanner.nextLine();
+          Scanner scanner = new Scanner(System.in);
+        int bulan = 0;
         
-        try {
-            int d = Integer.parseInt(diameterLingkaran);
-            
-            if(d <= 0) {
-            System.out.println("Nilai Diameter Tidak Sesuai");
-            
-            } else {
-                int jariJariLingkaran = d / 2;
-                double luasLingkaran = Math.PI * jariJariLingkaran * jariJariLingkaran;
-                double kelilingLingkaran = Math.PI * d;
+        System.out.print("Saldo Awal: ");
+        int saldoAwal = scanner.nextInt();
+
+        System.out.print("Bunga/Bulan (%): ");
+        int bungaPerBulan = scanner.nextInt();
+
+        System.out.print("saldo target: ");
+        int saldoTarget = scanner.nextInt();
+
         
-                System.out.println("\n");
-                System.out.println("=====Hasil Perhitungan Lingkaran=====");
-                System.out.println("Jari-jari Lingkaran = " +jariJariLingkaran);
-                System.out.println("Luas Lingkaran = "+luasLingkaran);
-                System.out.println("Keliling Lingkaran = "+kelilingLingkaran);
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("Nilai Diameter Tidak Sesuai ");
-    }
+        while (saldoAwal < saldoTarget) {
+            bulan++;
+            int bunga = saldoAwal * bungaPerBulan / 100 ;
+            saldoAwal += bunga;
+            System.out.println("Saldo di bulan ke-" + bulan + "= Rp." + saldoAwal);
+            
+        }
     }
 }
+    
+            
+           
